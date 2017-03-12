@@ -14,7 +14,7 @@
   * [密码找回](#%E5%AF%86%E7%A0%81%E6%89%BE%E5%9B%9E)
   * [Interceptor + 注解进行细粒度权限控制以及日志记录](#interceptor--%E6%B3%A8%E8%A7%A3%E8%BF%9B%E8%A1%8C%E7%BB%86%E7%B2%92%E5%BA%A6%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E4%BB%A5%E5%8F%8A%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95)
   * [Spring 定时任务](#spring-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1)
-- [分页](#%E5%88%86%E9%A1%B5)
+  * [分页](#%E5%88%86%E9%A1%B5)
 
 <!-- tocstop -->
 
@@ -116,6 +116,6 @@ scheduler="schedular"/>
 然后在类上添加@Component 注解，在方法上添加 `@Scheduled(cron = "00 0 * * ? ")` 就可以使用定时执行该方法了，可以查看 `TaskManager.java`。
 另外项目中也有一个集成 quartz 来执行定时任务的示例，不过配置相对繁琐一些，具体配置和使用可以查看 `applicationContext.xml` 和 `QuartzTask.java`。
 
-## 分页
+### 分页
 
 分页显示显示是一个网站必须要有的功能，因为随着记录的增多不可能一次将记录全部显示出来，在 Hibernate 中，我们使用 `Criteria` 可以方便的实现分页，只需要调用 `setFirstResult()` 设置第一条记录，调用 `setMaxResults()` 设置要选取的记录数，就可以实现查询对应的记录。一般分页显示的时候都会显示共有多少条记录、共有多少页、上一页、下一页、尾页等信息，这里设计了一个 Pager 类，其中封装了当前要显示的记录、当前页数、总记录数、总页数、首页、尾页、上一页、下一页等信息，这样，我们在 jsp 中就可以很方便的使用这些信息，例如：共`<s:property value="logPager.recordTotal"/>` 条记录
