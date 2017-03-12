@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户登录</title>
+<link href="css/login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="login" class="bor">
+  <h1>用户登录</h1>
+  <a class="back" href="/">返回首页&gt;&gt;</a>
+  <div class="theme">
+    <form name="form1" method="post" action='index_do.php'>
+      <ul>
+        <li> <span>用户名：</span>
+          <input id="txtUsername" class="intxt login_from" type="text" name="userid"/>
+        </li>
+        <li> <span>密&nbsp;&nbsp;&nbsp;码：</span>
+          <input id="txtPassword" class="intxt login_from2" type="password" name="pwd"/>
+        </li>
+        <li><span>验证码：</span>
+          <input type="text" class="intxt w200" style="width: 50px; text-transform: uppercase;" id="vdcode" name="vdcode"/>
+          <img id="vdimgck" align="absmiddle" onclick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src=""/> 看不清？ <a href="javascript:void(0)" onclick="changeAuthCode();">点击更换</a>
+         </li>
+        <li> <span>自动登录:&nbsp;&nbsp;</span>
+          <input type="checkbox"  name="keeptime" id="ra1"/>
+        </li>
+        <li> <span>&nbsp;</span>
+          <button id="btnSignCheck" class="login-btn" type="submit">登&nbsp;录</button>
+          <a class="regbt" href="reg.php" rel="nofollow">注册账号</a></li>
+      </ul>
+    </form>
+  </div>
+  <br class="clear"/>
+</div>
+<div class="footer">
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+* {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 12px Tahoma, "微软雅黑", "黑体", "宋体", Geneva, sans-serif;
+	line-height: 1.8em;
+	color: #555555;
+	background: #F2F2F2;
+}

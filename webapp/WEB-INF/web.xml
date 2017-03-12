@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>sdudoc</display-name>
+
+	<!-- 页面未找到 -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+	</error-page>
+
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	 <listener>  
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>  
+    </listener>  
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml</param-value>
+	</context-param>
+	
+	
+	
+	
+	
+	<!-- 过滤所有jsp页面 -->
+	<filter>
+		<filter-name>jspfilter</filter-name>
+		<filter-class>com.sdudoc.filter.JspFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>jspfilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<!-- 自动登录的filter -->
+	<filter>
+		<filter-name>autoLoginFilter</filter-name>
+		<filter-class>com.sdudoc.filter.AutoLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>autoLoginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- Open Sesssion In View-->
+	<filter>  
+        <filter-name>openSessionInViewFilter</filter-name>  
+        <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>  
+        <init-param>  
+            <param-name>sessionFactoryBeanName</param-name>  
+            <param-value>sessionFactory</param-value>  
+        </init-param>  
+        <init-param>  
+            <param-name>singleSession</param-name>  
+            <param-value>true</param-value>  
+        </init-param>  
+        <init-param>  
+            <param-name>flushMode</param-name>  
+            <param-value>AUTO</param-value>  
+        </init-param>  
+    </filter>  
+    <filter-mapping>  
+        <filter-name>openSessionInViewFilter</filter-name>  
+        <url-pattern>/*</url-pattern>  
+    </filter-mapping>  
+
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index</welcome-file>
+		<!-- <welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file> -->
+	</welcome-file-list>
+</web-app>

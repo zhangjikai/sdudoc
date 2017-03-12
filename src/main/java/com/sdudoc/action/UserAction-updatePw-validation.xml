@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+
+	<field name="oldPassword">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>旧密码不能为空</message>
+		</field-validator>
+	</field>
+
+	<field name="newPassword">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>新密码不能为空</message>
+		</field-validator>
+	</field>
+
+	<field name="newPassword2">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>确认新密码不能为空</message>
+		</field-validator>
+		<field-validator type="fieldexpression">
+			<param name="expression">(newPassword2 eq newPassword)</param>
+			<message>两次密码不一致</message>
+		</field-validator>
+	</field>
+
+</validators>

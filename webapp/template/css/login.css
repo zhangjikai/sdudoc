@@ -1,0 +1,227 @@
+﻿/* CSS Document */
+* {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font: 12px Tahoma, "微软雅黑", "黑体", "宋体", Geneva, sans-serif;
+	line-height: 1.8em;
+	color: #555555;
+	background: #F2F2F2;
+}
+
+a {
+	color: #555555;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #1E50A2;
+	text-decoration: underline
+}
+
+.intxt,.text {
+	background: url(../images/input_bg.gif) no-repeat 0 0;
+	color: #666;
+	border: 1px solid #CFCFCF;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 5px;
+	padding: 0 4px;
+	width: 238px;
+	border-radius: 3px 3px 3px 3px;
+}
+
+.text_o {
+	border: 1px solid #ff6666;
+}
+/*/*密码强度*/
+.rank {
+	border: none;
+	background: url("../images/rank.gif") no-repeat;
+	width: 145px;
+	height: 22px;
+	vertical-align: middle;
+	cursor: default;
+	margin: 0 0 0 5px;
+}
+
+.r0 {
+	background-position: 0 2;
+}
+
+.r1 {
+	background-position: 0 -19px;
+}
+
+.r2 {
+	background-position: 0 -40px;
+}
+
+.r3 {
+	background-position: 0 -61px;
+}
+
+.r4 {
+	background-position: 0 -82px;
+}
+
+.r5 {
+	background-position: 0 -103px;
+}
+
+.r6 {
+	background-position: 0 -124px;
+}
+
+.r7 {
+	background-position: 0 -145px;
+}
+
+.login {
+	height: 300px;
+}
+
+.bor {
+	width: 550px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	background: #FFF;
+	margin-top: 80px;
+	border: 1px solid #dfdddd;
+	box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+button {
+	margin: 0;
+	font-size: 12px;
+	cursor: pointer;
+	border: none;
+	text-align: center;
+}
+
+.reg-btn,.login-btn,.getpass-btn,.regbt {
+	background: url("../images/login_reg_icon.png") no-repeat scroll 0 0;
+	border: 0 none;
+	cursor: pointer;
+	display: block;
+	height: 40px;
+	width: 114px;
+	font-size: 14px;
+	line-height: 38px;
+	text-shadow: 0 1px #EEEEEE;
+	font-weight: bold;
+	color: #4A682D;
+	overflow: hidden;
+	float: left;
+	margin-right: 10px;
+}
+
+.reg-btn:hover,.login-btn:hover,.getpass-btn:hover {
+	background-position: 0 -48px;
+	color: #5c8c2f
+}
+
+/* 登录box
+-------------------------------------------------------------------*/
+#login {
+	
+}
+
+#login  h1 {
+	color: #333333;
+	font-family: '微软雅黑';
+	font-size: 26px;
+	font-weight: normal;
+	padding-top: 30px;
+	padding-left: 20px;
+	background: #f6f6f6;
+	height: 45px;
+	line-height: 26px;
+}
+
+#login .back {
+	position: absolute;
+	width: 100px;
+	right: 0;
+	top: 40px;
+	color: #9C0;
+	text-decoration: underline
+}
+
+#login .theme {
+	margin-top: 30px;
+}
+
+#login .theme li {
+	margin-bottom: 20px;
+	line-height: 30px;
+	overflow: hidden;
+	clear: both;
+	list-style: none;
+}
+
+#login .theme span {
+	color: #555555;
+	width: 100px;
+	display: block;
+	float: left;
+	font-size: 14px;
+	text-align: right;
+	overflow: hidden;
+	vertical-align: middle
+}
+
+#login .useNew .signUp {
+	text-align: right;
+	font-weight: bold;
+	margin-top: 30px;
+}
+
+.other_login {
+	margin-left: 32px;
+	margin-top: 35px;
+}
+
+.clear {
+	clear: both;
+}
+
+a.regbt {
+	background-position: 0 -98px;
+	text-align: center;
+}
+
+a.regbt:hover {
+	background-position: 0 -148px;
+	color: #5c8c2f
+}
+
+.rst_login span,.other_login span {
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+	padding-bottom: 5px;
+}
+
+.footer {
+	width: 550px;
+	margin: 10px auto;
+	text-align: center
+}
+
+.lform .enumselect {
+	line-height: 26px;
+	padding: 3px 0;
+	height: 26px;
+}
+
+.success {
+	padding: 20px;
+	text-align: center
+}

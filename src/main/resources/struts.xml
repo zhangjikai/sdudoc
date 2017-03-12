@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 指定由spring负责action对象的创建 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 如果使用Spring AOP拦截Action， 应添加下面那句话 -->
+	<!-- <constant name="struts.objectFactory.spring.autoWire.alwaysRespect"
+		value="true" /> -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.multipart.maxSize" value="20971520" />
+
+	<!-- 当struts.xml改动后，是否重新加载。默认值为false(生产环境下使用),开发阶段最好打开 -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+
+	<!-- 是否使用struts的开发模式。开发模式会有更多的调试信息。默认值为false(生产环境下使用),开发阶段最好打开 -->
+	<constant name="struts.devMode" value="false" />
+
+	<!-- 设置浏览器是否缓存静态内容。默认值为true(生产环境下使用),开发阶段最好关闭 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+
+	<!-- 是否开启动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+
+	<constant name="struts.convention.package.locators" value="action" />
+	<constant name="struts.convention.result.path" value="/" />
+
+	<package name="sdudoc" extends="struts-default">
+		<interceptors>
+			<!-- 注册自定义的权限控制拦截器 -->
+			<interceptor name="accessInterceptor"
+				class="com.sdudoc.interceptor.AccessInterceptor" />
+				<interceptor name="logInterceptor"
+				class="com.sdudoc.interceptor.LogInterceptor" />
+			<!-- 把自定义的权限控制拦截器和默认的拦截器栈加到新的自定义的拦截器栈 -->
+			<interceptor-stack name="myInterceptors">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="accessInterceptor" />
+				<interceptor-ref name="logInterceptor" />
+			</interceptor-stack>
+		</interceptors>
+		<!-- 指定新的自定义的拦截器栈为默认的拦截器栈，这样自定义的权限控制拦截器就可以发挥作用了 -->
+		<default-interceptor-ref name="myInterceptors" />
+		<global-results>
+			<result name="error">/error.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="input">/login.jsp</result>
+			<result name="nopermission">/nopermission.jsp</result>
+		</global-results>
+	</package>
+</struts>
