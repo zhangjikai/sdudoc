@@ -66,12 +66,12 @@
 
 **书籍展示**
 
-![](screenshot/注册.png)
+![](screenshot/展示.png)
 
 
 **近期操作**
 
-![](screenshot/注册.png)
+![](screenshot/近期操作.png)
 
 ## 具体实现
 ### 邮箱验证
